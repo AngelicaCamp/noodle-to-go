@@ -2,41 +2,47 @@
     <div>
         <Message :msg="msg" v-show="msg" />
         <form id="noodle-form" action="POST" @submit="createNoodle">
-            <!--Nome cliente-->
-            <div class="input-container">
-                <label for="nome">Nome do Cliente:</label>
-                <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu nome" required>
-            </div>
-            <!--Tipo de massa-->
-            <div class="input-container">
-                <label for="massa">Escolha o tipo de massa:</label>
-                <select name="massa" id="massa" v-model="massa" required>
-                    <option value="">Selecione a sua massa</option>
-                    <option v-for="massa in massas" :key="massa.id" :value="massa.id">{{ massa.tipo }}</option>
-                </select>
-            </div>
+            <div class="teste1">
+                <!--Nome cliente-->
+                <div class="input-container">
+                    <label for="nome">Nome do Cliente:</label>
+                    <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu nome" required>
+                </div>
+                <!--Tipo de massa-->
+                <div class="input-container">
+                    <label for="massa">Escolha o tipo de massa:</label>
+                    <select name="massa" id="massa" v-model="massa" required>
+                        <option value="">Selecione a sua massa</option>
+                        <option v-for="massa in massas" :key="massa.id" :value="massa.id">{{ massa.tipo }}</option>
+                    </select>
+                </div>
 
-            <!--Tipo de Molho-->
-            <div class="input-container">
-                <label for="molho">Escolha o tipo de molho:</label>
-                <select name="molho" id="molho" v-model="molho" required>
-                    <option value="">Selecione o molho</option>
-                    <option v-for="molho in molhos" :key="molho.id" :value="molho.id">{{ molho.tipo }}</option>
-                </select>
-            </div>
-            <!--Ingredientes-->
-            <div  id="ingredientes-container" class="input-container">
-                <label id="ingredientes-title" for="ingredientes">Selecione os ingredientes:</label>
-                <div class="checkbox-container" v-for="ingrediente in ingredientes" :key="ingrediente.id">
-                    <input type="checkbox" name="ingredientes" v-model="ingredientesSelected" :value="ingrediente.id">
-                    <span>{{ ingrediente.nome }}</span>
+                <!--Tipo de Molho-->
+                <div class="input-container">
+                    <label for="molho">Escolha o tipo de molho:</label>
+                    <select name="molho" id="molho" v-model="molho" required>
+                        <option value="">Selecione o molho</option>
+                        <option v-for="molho in molhos" :key="molho.id" :value="molho.id">{{ molho.tipo }}</option>
+                    </select>
                 </div>
             </div>
-
-            <div class="input-container">
-                <input type="submit" class="btn-submit" value="Montar Macarrão">
+            
+            <div class="teste2">
+                <!--Ingredientes-->
+                <div  id="ingredientes-container" class="input-container">
+                    <label id="ingredientes-title" for="ingredientes">Selecione os ingredientes:</label>
+                    <div class="ingredientes-list">
+                        <div class="checkbox-container" v-for="ingrediente in ingredientes" :key="ingrediente.id">
+                            <input type="checkbox" name="ingredientes" v-model="ingredientesSelected" :value="ingrediente.id">
+                            <span>{{ ingrediente.nome }}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            
+            <div class="input-container">
+                <input type="submit" class="btn-submit" value="Salvar">
+            </div>
         </form>
     </div>
 </template>
@@ -133,7 +139,7 @@ export default {
                 }))
 
             // criar mensagem do pedido
-            this.msg = `Pedido realizado com sucesso!`
+            this.msg = `Pedido registrado com sucesso!`
 
             // limpar mensagem
             setTimeout(function(){
@@ -159,8 +165,21 @@ export default {
 
 <style scoped>
     #noodle-form {
-        max-width: 400px;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teste1 {
+        display: flex;
+        gap: 1rem;
+        width: 60%;
+    }
+
+    .teste2 {
+        display: flex;
+        width: 60%;
     }
 
     .input-container {
@@ -184,6 +203,15 @@ export default {
     #ingredientes-container {
         flex-direction: row;
         flex-wrap: wrap;
+        width: 100%;
+       
+    }
+
+    .ingredientes-list {
+        width: 100%;
+        display: flex;
+        column-gap: 2rem;
+        flex-wrap: wrap;
     }
 
     #ingredientes-title {
@@ -193,7 +221,7 @@ export default {
     .checkbox-container {
         display: flex;
         align-items: flex-start;
-        width: 50%;
+        width: max-content;
         margin-bottom: 20px;
     }
 

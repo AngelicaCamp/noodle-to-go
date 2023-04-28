@@ -1,18 +1,19 @@
 <template>
     <div>
-        <Banner />
+        <div class="main-container">
+            <h1>Montar macarrão: <a name="pedido"></a></h1>
+            <NoodleForm />
+        </div>
     </div>
 </template>
 
 <script>
 
-import Banner from '../components/Banner.vue'
 import NoodleForm from '../components/NoodleForm.vue'
 
 export default {
-    name: 'Home',
+    name: 'Registro',
     components: {
-        Banner,
         NoodleForm
     }
     
@@ -29,6 +30,5 @@ export default {
     img, form {
         width: 50%;
     }
-
 
 </style>

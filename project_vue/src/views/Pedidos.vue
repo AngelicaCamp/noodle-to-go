@@ -1,15 +1,12 @@
 <template>
     <div>
         <div class="main-container">
-            <h1>Pedido realizado:</h1>
+            <h1>Acompanhar pedidos:</h1>
             <Dashboard />
         </div>
         
     </div>
 </template>
-
-
-
 
 <script>
 import Dashboard from '../components/Dashboard.vue'

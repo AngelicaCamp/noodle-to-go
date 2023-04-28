@@ -4,7 +4,8 @@
             <router-link id="logo-url" to="/" class="router-link">
                 <img id="image-logo" :src="logo" alt="logo">
             </router-link>
-            <router-link class="router-link" to="/">Fazer Pedido</router-link>
+            <!-- <router-link class="router-link" to="/">Home</router-link> -->
+            <router-link class="router-link" to="/novo">Registrar Pedido</router-link>
             <router-link class="router-link" to="/pedidos">Pedidos</router-link>
         </nav>
     </div>
@@ -31,7 +32,7 @@ export default {
         justify-content: flex-end;
         align-items: center;
         padding: 15px 50px;
-        height: 20vh;
+        height: 15vh;
     }
 
     #navbar, #logo-url {
@@ -41,8 +42,8 @@ export default {
 
 
     #image-logo {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     #navbar, .router-link {

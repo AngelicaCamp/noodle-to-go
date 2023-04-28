@@ -1,8 +1,8 @@
 <template>
     <div id="banner">
         <div id="banner-pedido">
-            <h2>Faça seu pedido e nos vamos até você!</h2>
-            <a href="#pedido" class="btn btn-primary btn-rounded">Fazer Pedido</a>
+            <h2>Bem vindo (a)</h2>
+            <router-link class="btn btn-primary btn-rounded" to="/novo">Registrar Pedido</router-link>
         </div>
     </div>
 </template>
@@ -29,13 +29,13 @@ export default {
     }
 
     #banner-pedido {
-        width: 40%;
+        width: 50%;
         height: 50%;
     }
 
     #banner-pedido h2 {
         color: #ab9b84;
-        font-size: 40px;
+        font-size: 60px;
         padding: 40px 40px;
         word-spacing: 5px;
         text-align: justify;
