@@ -2,7 +2,7 @@
     <div>
         <Message :msg="msg" v-show="msg" />
         <form id="noodle-form" action="POST" @submit="createNoodle">
-            <div class="teste1">
+            <div class="box-1">
                 <!--Nome cliente-->
                 <div class="input-container">
                     <label for="nome">Nome do Cliente:</label>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             
-            <div class="teste2">
+            <div class="box-2">
                 <!--Ingredientes-->
                 <div  id="ingredientes-container" class="input-container">
                     <label id="ingredientes-title" for="ingredientes">Selecione os ingredientes:</label>
@@ -171,13 +171,13 @@ export default {
         align-items: center;
     }
 
-    .teste1 {
+    .box-1 {
         display: flex;
         gap: 1rem;
         width: 60%;
     }
 
-    .teste2 {
+    .box-2 {
         display: flex;
         width: 60%;
     }
@@ -248,5 +248,20 @@ export default {
         background-color: transparent;
         border: 3px solid #362d21;
     }
+
+
+    @media screen and (max-width: 700px){
+        .box-1, .box-2 {
+            display: block;
+        }
+
+        .ingredientes-list {
+        display: block;
+       
+    }
+
+
+    }
+
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="containar-table">
         <Message :msg="msg" v-show="msg" />
         <div id="noodle-table" v-if="noodles">
             <!--Header table-->
@@ -104,9 +104,7 @@ export default {
 
 <style scoped>
     #noodle-table {
-        max-width: 1200px;
         margin: 0 auto;
-        min-height: fi;
     }
 
     #noodle-table-header, #noodle-table-rows, .noodle-table-row {
@@ -161,6 +159,23 @@ export default {
       color: #362d21;
       border: 2px solid #362d21;
     }
+
+    @media screen and (max-width: 700px){
+
+        #noodle-table-header div, .noodle-table-row div {
+            width: 20%;
+        }
+
+        .delete-btn {
+            display: none;
+        }
+
+        
+    } 
+
+
+        
+    
 
 
 

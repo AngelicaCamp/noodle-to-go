@@ -26,4 +26,10 @@ export default {
     #footer p {
         color: #F2AC49;
     }
+
+    @media screen and (max-width: 700px){
+        #footer {
+            display: none;
+        }
+    }
 </style>

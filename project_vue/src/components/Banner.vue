@@ -58,4 +58,16 @@ export default {
         color: #362d21;
     }
 
+    @media screen and  (max-width: 700px){
+
+        #banner-pedido h2 {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #banner-pedido {
+            width: 100%;
+        }
+    }
+
 </style>
